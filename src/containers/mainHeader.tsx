@@ -1,17 +1,25 @@
 import Link from 'next/link';
 import styles from './mainHeader.module.scss';
+import {ReactComponent as CompanyLogo} from '../public/serverles.svg';
+import {LinkMain} from '../components/linkMain';
+import {useRouter} from 'next/router';
+import {ButtonC} from '../components/buttonC';
+
 
 export const MainHeader=()=>{
+  const router = useRouter();
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.left}>
-
+          <img src="/serverles.svg" alt=""/>
         </div>
         <div className={styles.right}>
-          <Link href={'/'}>Main</Link>
-          <Link href={'/firebaseAuth'}>'sss'</Link>
-          <Link href={'/redux'}>'sasdad'</Link>
+          <LinkMain href={'/'} text={'Main'}/>
+          <LinkMain href={'/firebaseAuth'} text={'fiebase'} setSecondColor={true}/>
+
+          <ButtonC text={'Sing Up'} onClick={()=>router.push('firebaseAuth')}/>
+
         </div>
 
       </div>

@@ -1,0 +1,21 @@
+@import 'src/styles/const.module';
+
+.wrapper{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  transition: 0.3s ease all;
+  color:  $firstTextColor;
+  &:hover{
+    color: $secondTextColor;
+  }
+}
+
+.secondColor{
+  color: $secondTextColor;
+  &:hover{
+    color: $firstTextColor;
+  }
+}

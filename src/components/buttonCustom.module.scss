@@ -1,0 +1,14 @@
+@import 'src/styles/const.module';
+
+.wrapper {
+  padding: 10px;
+  width: 100px;
+  background: $secondTextColor;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  &:hover{
+    background: #fc4842
+  }
+
+}

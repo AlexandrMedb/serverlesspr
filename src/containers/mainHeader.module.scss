@@ -3,9 +3,28 @@
 .wrapper {
   background: $mainBg;
   color: #eaeaea;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-content: space-between;
+  max-width: 80vw;
+  width: 100%;
+
+  .left {
+    img {
+      height: 20px
+    }
+  }
+
+  .right {
+    display: grid;
+    justify-content: end;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 60px));
+    grid-gap: 10px;
+  }
 }
