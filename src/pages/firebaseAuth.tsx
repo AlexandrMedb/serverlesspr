@@ -1,5 +1,4 @@
 import type {NextPage} from 'next';
-import Head from 'next/head';
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {useEffect, useState} from 'react';
 import {authFirebase, writeProject} from '../firebase/config';
@@ -106,7 +105,9 @@ const FirebaseAuth:NextPage=()=>{
         } }>SetProject</button>
       </div>
 
-      <div>{Object.keys(projects).map((el:any, index)=><div style={{padding: '10px'}} key={index}>{projects[el]?.project}</div>)}</div>
+      <div>{Object.keys(projects).map((el:any, index)=>
+        <div style={{padding: '10px'}} key={index}>{projects[el]?.project}</div>)}
+      </div>
 
     </main>
   </>;

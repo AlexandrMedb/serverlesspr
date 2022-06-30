@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import styles from './mainHeader.module.scss';
-import {ReactComponent as CompanyLogo} from '../public/serverles.svg';
 import {LinkMain} from '../components/linkMain';
 import {useRouter} from 'next/router';
 import {ButtonC} from '../components/buttonC';
