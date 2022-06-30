@@ -28,7 +28,7 @@ const FirebaseAuth:NextPage=()=>{
       <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
       <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
     </Head>
-    <main>
+    <main className={'globalMain'}>
 
       <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>
       <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)}/>

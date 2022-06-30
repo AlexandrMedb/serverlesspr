@@ -1,0 +1,11 @@
+@import "src/styles/const.module";
+
+.wrapper {
+  background: $mainBg;
+  color: #eaeaea;
+}
+
+.container {
+display: flex;
+  justify-content: space-between;
+}
