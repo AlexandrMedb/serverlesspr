@@ -16,7 +16,7 @@ export const MainHeader=()=>{
           <LinkMain href={'/'} text={'Main'}/>
           <LinkMain href={'/firebaseAuth'} text={'fiebase'} setSecondColor={true}/>
 
-          <ButtonC text={'Sing Up'} onClick={()=>router.push('firebaseAuth')}/>
+          <ButtonC text={'Sing Up'} onClick={()=>router.push('login')}/>
 
         </div>
 

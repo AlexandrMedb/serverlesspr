@@ -26,15 +26,18 @@ const firebaseConfig = {
 
 
 let app;
+// const database = getDatabase(app);
+
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
+  // database = getDatabase(app);
+  // const auth = getAuth();
 } else {
   app = getApp();
 }
 
 
 export const authFirebase = getAuth(app);
-const database = getDatabase(app);
 
 
 // export function writeProject( name:string) {

@@ -1,8 +1,10 @@
 import type {NextPage} from 'next';
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithRedirect} from 'firebase/auth';
 import {useEffect, useState} from 'react';
 import {authFirebase, writeProject} from '../firebase/config';
 import {child, get, getDatabase, onValue, ref, onChildChanged} from 'firebase/database';
+
+import {GoogleAuthProvider} from 'firebase/auth';
 
 
 const FirebaseAuth:NextPage=()=>{
@@ -79,9 +81,17 @@ const FirebaseAuth:NextPage=()=>{
   }, [authFirebase.currentUser]);
 
 
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+
+  const redirHandler=()=>{
+    signInWithRedirect(auth, provider).then((res)=> console.log(res));
+  };
+
   return <>
 
     <main className={'globalMain'}>
+      <div style={{padding: '10px'}} onClick={redirHandler}>sssssssssss</div>
       <div style={{padding: '10px'}}>{user?.email}</div>
 
       <div style={{padding: '10px'}}>
