@@ -7,6 +7,13 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 840px) {
+  .wrapper{
+    justify-content: center;
+  }
 }
 
 .content {
@@ -32,7 +39,7 @@
   font-size: 16px;
   line-height: 28px;
   p{
-    color: rgba(255, 255, 255, 0.46);
+    color: $greyText;
   }
 }
 

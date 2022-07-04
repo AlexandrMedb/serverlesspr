@@ -11,8 +11,6 @@ export const GitBlog=()=>{
         icon={<img src={'/icons/donloadIcon.svg'} alt={'icon'}/>}/>
       <StatBlog title={'Technology'} text={'Partner'}
         icon={<img src={'/icons/donloadIcon.svg'} alt={'icon'}/>}/>
-
-
     </div>
     <div>
       <h1>"I’m still a huge fan of  @Docker but man this
