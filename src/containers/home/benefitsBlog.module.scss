@@ -1,0 +1,9 @@
+@import "src/styles/const.module";
+
+.wrapper{
+background: $mainBg;
+  padding: 15vh 0 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
