@@ -13,7 +13,7 @@ export const DoMore=()=>{
       Deploy Now
     </h2>
     <div className={styles.buttons}>
-      <ButtonC text={'Deploy Now'} onClick={()=>{}} />
+      {/* <ButtonC text={'Deploy Now'} onClick={()=>{}} />*/}
       <ButtonC text={'Deploy Now'} onClick={()=>{}} />
     </div>
     <div>
