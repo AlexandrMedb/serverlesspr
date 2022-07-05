@@ -20,7 +20,7 @@ function MyApp({Component, pageProps}: AppProps) {
         <link rel="icon" href="/serverFav.png" />
       </Head>
       <Provider store={store}>
-        {route.asPath!=='/project' &&<MainHeader/>}
+        {route.asPath=='/' &&<MainHeader/>}
         <Component {...pageProps} />
       </Provider>
     </>
