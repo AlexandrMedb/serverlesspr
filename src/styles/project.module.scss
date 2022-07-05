@@ -2,7 +2,7 @@
 @import "mixins.module";
 
 .mainWrapper {
-  padding: 2em;
+  padding: 10px;
 }
 
 .userName {
@@ -17,19 +17,19 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
+  h1{
+    margin-bottom: 10px;
+  }
+
   div {
     display: flex;
-    max-width: 700px;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: end;
+    width: max(40vw ,320px);
+    justify-content:  flex-end ;
 
     input {
       @include inputStyle();
-      max-width: 320px;
-      min-width: 200px;
-      margin: 0 20px;
 
+      margin: 0 20px 0 0 ;
 
     }
 
@@ -43,7 +43,7 @@
 }
 
 .appContainer {
-  margin-top: 30px;
+  margin-top: 20px;
   .appImp {
     border-top: 2px  solid #eeeeee;
     border-right: none;
