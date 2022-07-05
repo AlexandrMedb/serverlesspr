@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0;
+  padding: 80px 10px;
   h1{
     max-width: 500px;
     font-size: 29px;
@@ -14,6 +14,10 @@
 font-weight: 600;
     margin-bottom: 10px;
   }
+
+  //@media screen and (max-width: 700px){
+  //  padding: 80px 10px;
+  //}
 }
 
 .stats{

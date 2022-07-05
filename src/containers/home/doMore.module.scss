@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  //header height
   min-height: calc(100vh - 79px);
 
   .imgWrapper{
@@ -26,8 +25,25 @@
     margin-bottom: 20px;
 
   }
+
+  @media screen and (max-width: 700px){
+    h1{
+      font-size: 32px;
+      max-width: 100vw;
+    }
+    h2{
+      font-size: 16px;
+    }
+  }
+}
+
+.videoContainer{
+  max-width: 75vw;
+
   video{
-    height: 380px;
+    //max-height: 380px;
+    max-width: 75vw;
+
   }
 }
 

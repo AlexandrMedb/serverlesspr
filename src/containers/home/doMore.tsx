@@ -16,7 +16,7 @@ export const DoMore=()=>{
       {/* <ButtonC text={'Deploy Now'} onClick={()=>{}} />*/}
       <ButtonC text={'Deploy Now'} onClick={()=>{}} />
     </div>
-    <div>
+    <div className={styles.videoContainer}>
       <video src={'/website-home-hero.mp4'}
         autoPlay={true} loop={true} controls={false} muted>
       </video>
