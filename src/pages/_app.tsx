@@ -5,10 +5,12 @@ import store from '../store/store';
 import {MainHeader} from '../containers/mainHeader';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
+import {authFirebase} from '../firebase/config';
+import {useEffect} from 'react';
 
 function MyApp({Component, pageProps}: AppProps) {
   const route =useRouter();
-  console.log(route.asPath);
+
 
   return (
     <>

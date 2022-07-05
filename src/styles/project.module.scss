@@ -1,17 +1,59 @@
 @import "src/styles/const.module";
+@import "mixins.module";
 
-.mainWrapper{
+.mainWrapper {
   padding: 2em;
 }
 
-.userName{
+.userName {
   color: rgb(158, 158, 158);
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.appContainer{
-  .appImp{
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
+  div {
+    display: flex;
+    max-width: 700px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: end;
+
+    input {
+      @include inputStyle();
+      max-width: 320px;
+      min-width: 200px;
+      margin: 0 20px;
+
+
+    }
+
+    div {
+      color: $firstTextColor;
+      max-width: 144px;
+      justify-content: center;
+    }
+  }
+
+}
+
+.appContainer {
+  margin-top: 30px;
+  .appImp {
+    border-top: 2px  solid #eeeeee;
+    border-right: none;
+    border-left: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+    &:last-of-type{
+      border-bottom: 2px  solid #eeeeee;
+    }
   }
 }

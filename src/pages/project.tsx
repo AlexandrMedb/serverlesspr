@@ -23,6 +23,7 @@ const Project:NextPage=()=>{
 
   const crateHandler=()=>{
     createProject(prName);
+    setPrName('');
   };
 
   useEffect(()=>{
@@ -33,7 +34,6 @@ const Project:NextPage=()=>{
     });
   }, [user]);
 
-  console.log(user);
 
   return <div className={styles.wrapper}>
     <menu>
@@ -48,7 +48,11 @@ const Project:NextPage=()=>{
       <div className={styles.appHeader}>
         <h1>apps</h1>
         <div>
-          <input type="text" value={prName} onChange={(e)=>setPrName(e.target.value)}/>
+          <input
+            type="text"
+            placeholder={'project name'}
+            value={prName}
+            onChange={(e)=>setPrName(e.target.value)}/>
           <ButtonC text={'create app'} onClick={crateHandler}/>
         </div>
       </div>
