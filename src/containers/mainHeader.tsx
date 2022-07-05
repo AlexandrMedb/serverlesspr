@@ -29,7 +29,7 @@ export const MainHeader=()=>{
           </Link>
         </div>
         <div className={styles.right}>
-          {user && <LinkMain href={'/project'} text={'Main'}/>}
+          <LinkMain href={'/project'} text={'Main'}/>
           <LinkMain href={'/login/login'} text={'login'} setSecondColor={true}/>
           <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>
         </div>

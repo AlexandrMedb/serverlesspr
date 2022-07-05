@@ -9,7 +9,7 @@ import {
 import {authFirebase} from '../../firebase/config';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 
 const Login: NextPage = () => {
@@ -39,6 +39,7 @@ const Login: NextPage = () => {
   const [password, setPassword]=useState('');
   const [confPassword, setConfPassword]=useState('');
   const [errorInput, setErrorInput]=useState('');
+
 
   const submitHandler=()=>{
     if (!email) {
@@ -70,6 +71,7 @@ const Login: NextPage = () => {
     }
 
     setErrorInput('');
+
 
     const submitFn=view==='singUp'?createUserWithEmailAndPassword:signInWithEmailAndPassword;
     submitFn(authFirebase, email, password)
@@ -110,7 +112,7 @@ const Login: NextPage = () => {
 
       <form className={styles.inputWrapper}>
         <div>Email</div><
-          input value={email} onChange={(e)=>setEmail(e.target.value)} type="email"/>
+          input autoComplete={''} value={email} onChange={(e)=>setEmail(e.target.value)} type="email"/>
         <div>Password</div>
         <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password"/>
         {view==='singUp' && <><div>Confirm password</div>
