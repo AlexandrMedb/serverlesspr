@@ -14,9 +14,9 @@ export const MainHeader=()=>{
         </div>
         <div className={styles.right}>
           <LinkMain href={'/'} text={'Main'}/>
-          <LinkMain href={'/firebaseAuth'} text={'fiebase'} setSecondColor={true}/>
+          <LinkMain href={'/login/login'} text={'login'} setSecondColor={true}/>
 
-          <ButtonC text={'Sing Up'} onClick={()=>router.push('login')}/>
+          <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>
 
         </div>
 
