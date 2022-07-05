@@ -26,7 +26,7 @@ const firebaseConfig = {
 
 
 let app;
-// const database = getDatabase(app);
+
 
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
@@ -38,11 +38,12 @@ if (!getApps().length) {
 
 
 export const authFirebase = getAuth(app);
+export const database = getDatabase(app);
 
 
 // export function writeProject( name:string) {
 //   const db = getDatabase();
-//   set(ref(db, 'projects/'), {
+//   set(ref(db, 'project.tsx/'), {
 //     project: name,
 //   }).then((res)=>{
 //
@@ -52,8 +53,8 @@ export const authFirebase = getAuth(app);
 
 export function writeProject( name:string) {
   const db = getDatabase();
-  const newPostKey = push(child(ref(db), 'projects')).key;
-  set(ref(db, 'projects/'+newPostKey), {
+  const newPostKey = push(child(ref(db), 'project.tsx')).key;
+  set(ref(db, 'project.tsx/'+newPostKey), {
     project: name,
   }).then((res)=>{
 
@@ -74,7 +75,7 @@ function writeNewPost(uid:string, username:string, picture:string, title:string,
   };
 
   // Get a key for a new Post.
-  const newPostKey = push(child(ref(db), 'projects')).key;
+  const newPostKey = push(child(ref(db), 'project.tsx')).key;
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   const updates = {};
