@@ -1,7 +1,6 @@
 import {initializeApp, getApp, getApps} from 'firebase/app';
 import {getAuth} from 'firebase/auth';
-import {child, getDatabase, push, ref, set, update, get} from 'firebase/database';
-import firebase from 'firebase/app';
+import {getDatabase} from 'firebase/database';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,70 +19,15 @@ const firebaseConfig = {
   measurementId: 'G-2FE4X32W13',
 };
 
-// Initialize Firebase
-
-// console.log(getApp('name'));
-
 
 let app;
-
-
 if (!getApps().length) {
   app = initializeApp(firebaseConfig);
-  // database = getDatabase(app);
-  // const auth = getAuth();
 } else {
   app = getApp();
 }
 
-
 export const authFirebase = getAuth(app);
 export const database = getDatabase(app);
-
-
-// export function writeProject( name:string) {
-//   const db = getDatabase();
-//   set(ref(db, 'project.tsx/'), {
-//     project: name,
-//   }).then((res)=>{
-//
-//   }).catch((er)=> console.log(er));
-// }
-
-
-export function writeProject( name:string) {
-  const db = getDatabase();
-  const newPostKey = push(child(ref(db), 'project.tsx')).key;
-  set(ref(db, 'project.tsx/'+newPostKey), {
-    project: name,
-  }).then((res)=>{
-
-  }).catch((er)=> console.log(er));
-}
-
-function writeNewPost(uid:string, username:string, picture:string, title:string, body:string) {
-  const db = getDatabase();
-
-  // A post entry.
-  const postData = {
-    author: username,
-    uid: uid,
-    body: body,
-    title: title,
-    starCount: 0,
-    authorPic: picture,
-  };
-
-  // Get a key for a new Post.
-  const newPostKey = push(child(ref(db), 'project.tsx')).key;
-
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  const updates = {};
-  // @ts-ignore
-  // updates['/posts/' + newPostKey] = postData;
-  // updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-  return update(ref(db), updates);
-}
 
 

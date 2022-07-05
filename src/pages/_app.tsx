@@ -4,8 +4,12 @@ import {Provider} from 'react-redux';
 import store from '../store/store';
 import {MainHeader} from '../containers/mainHeader';
 import Head from 'next/head';
+import {useRouter} from 'next/router';
 
 function MyApp({Component, pageProps}: AppProps) {
+  const route =useRouter();
+  console.log(route.asPath);
+
   return (
     <>
       <Head>
@@ -14,7 +18,7 @@ function MyApp({Component, pageProps}: AppProps) {
         <link rel="icon" href="/serverFav.png" />
       </Head>
       <Provider store={store}>
-        <MainHeader/>
+        {route.asPath!=='/project' &&<MainHeader/>}
         <Component {...pageProps} />
       </Provider>
     </>
