@@ -4,10 +4,15 @@ import {child, onValue, push, ref, set} from 'firebase/database';
 import {useEffect, useState} from 'react';
 import styles from 'styles/project.module.scss';
 import {ButtonC} from '../components/buttonC';
+import {useRouter} from 'next/router';
 
 const Project:NextPage=()=>{
   const user=authFirebase.currentUser;
+  const router=useRouter();
 
+  useEffect(()=>{
+    authFirebase.onAuthStateChanged((value)=>(!value && router.push('/')));
+  }, []);
 
   function createProject( name:string) {
     const newPostKey = push(child(ref(database), 'project')).key;
