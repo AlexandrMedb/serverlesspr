@@ -16,7 +16,7 @@ const Login: NextPage = () => {
   const router = useRouter();
 
   useEffect(()=>{
-    authFirebase.onAuthStateChanged((value)=>(value && router.push('/project')));
+    authFirebase.onAuthStateChanged((value)=>(value && router.push('/', '/project')));
   }, []);
 
   const {views} = router.query;
