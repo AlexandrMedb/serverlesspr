@@ -14,6 +14,11 @@ import {useEffect, useState} from 'react';
 
 const Login: NextPage = () => {
   const router = useRouter();
+
+  useEffect(()=>{
+    authFirebase.onAuthStateChanged((value)=>(value && router.push('/project')));
+  }, []);
+
   const {views} = router.query;
 
   type view_t='login'|'singUp'

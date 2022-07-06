@@ -3,8 +3,9 @@ import {LinkMain} from '../components/linkMain';
 import {useRouter} from 'next/router';
 import {ButtonC} from '../components/buttonC';
 import Link from 'next/link';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {authFirebase} from '../firebase/config';
+import {User} from '@firebase/auth';
 
 
 export const MainHeader=()=>{
@@ -12,13 +13,12 @@ export const MainHeader=()=>{
 
   const [menuOpen, setMenuOpen]=useState(false);
 
-  const user=authFirebase.currentUser;
+  const [user, setUser]=useState<User>();
 
-  const clickHandler=()=>{
-    if (user) {
-      router.push('/project');
-    } else router.push('/login');
-  };
+  useEffect(()=>{
+    authFirebase.onAuthStateChanged((value)=>(value && setUser(value)));
+  }, []);
+
 
   return (<>
     <header className={styles.wrapper}>
@@ -29,7 +29,8 @@ export const MainHeader=()=>{
           </Link>
         </div>
         <div className={styles.right}>
-          <LinkMain href={'/project'} text={'Main'}/>
+          {user && <LinkMain href={'/project'} text={'Main'}/>}
+
           <LinkMain href={'/login/login'} text={'login'} setSecondColor={true}/>
           <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>
         </div>
