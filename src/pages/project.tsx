@@ -35,7 +35,7 @@ const Project:NextPage=()=>{
   }, [user]);
 
 
-  return <div className={styles.wrapper}>
+  return <>
     <menu>
       <div>
         <img style={{height: '20px'}} src="/icons/flash.svg" alt=""/>
@@ -68,7 +68,7 @@ const Project:NextPage=()=>{
     </main>
 
 
-  </div>;
+  </>;
 };
 
 
