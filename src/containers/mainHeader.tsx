@@ -44,9 +44,11 @@ export const MainHeader=()=>{
     </header>
     {menuOpen &&
             <div className={styles.burgerMenu}>
-              <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>
-              <ButtonC text={'Login'} onClick={()=>router.push('/login/login')}/>
-              <ButtonC text={'Main'} onClick={()=>router.push('/project')}/>
+              {!user && <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>}
+              {!user && <ButtonC text={'Login'} onClick={()=>router.push('/login/login')}/>}
+              {user && <ButtonC text={'Main'} onClick={()=>router.push('/project')}/>}
+
+
             </div>}
   </>
   );
