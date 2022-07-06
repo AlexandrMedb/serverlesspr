@@ -29,10 +29,11 @@ export const MainHeader=()=>{
           </Link>
         </div>
         <div className={styles.right}>
-          {user && <LinkMain href={'/project'} text={'Main'}/>}
+          {user && <ButtonC text={'Main'} onClick={()=>router.push('/project')}/>}
+          {!user && <LinkMain href={'/login/login'} text={'login'} setSecondColor={true}/>}
+          {!user && <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>}
 
-          <LinkMain href={'/login/login'} text={'login'} setSecondColor={true}/>
-          <ButtonC text={'Sing Up'} onClick={()=>router.push('/login/singUp')}/>
+
         </div>
         <div className={styles.burgerMenuIcon}><img onClick={()=>setMenuOpen(!menuOpen)}
           src="/icons/bars-solid.svg" alt=""/></div>
