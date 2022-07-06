@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './doMore.module.scss';
 import {ButtonC} from '../../components/buttonC';
-import {authFirebase} from '../../firebase/config';
 import {useRouter} from 'next/router';
+import {User} from '@firebase/auth';
 
-export const DoMore=()=>{
-  const user=authFirebase.currentUser;
+interface props_i{
+  user?:User
+}
+
+export const DoMore=({user}:props_i)=>{
   const router=useRouter();
 
   const clickHandler=()=>{
